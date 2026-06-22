@@ -1,0 +1,33 @@
+@import "modern-normalize/modern-normalize.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-green: #2f6b3f;
+  --color-green-hover: #255a35;
+
+  --color-orange: #f47c20;
+  --color-orange-hover: #d96513;
+
+  --color-green-light: #eaf6ee;
+  --color-orange-light: #fff3e8;
+
+  --color-text-main: #1f2933;
+  --color-text-muted: #667085;
+
+  --color-border: #e5e7eb;
+  --color-white: #ffffff;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  color: var(--color-text-main);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), sans-serif;
+}

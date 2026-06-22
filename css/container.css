@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  min-width: 335px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Styles for tablet */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 704px;
+    margin: 0;
+  }
+}
+
+/* Styles for desktop */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0;
+  }
+}
