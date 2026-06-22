@@ -24,10 +24,93 @@ html {
 body {
   font-family: var(--font-body), sans-serif;
   color: var(--color-text-main);
+  background-color: #f8faf7;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-heading), sans-serif;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 22px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-bottom-width: 3px;
+  border-radius: 100px;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  box-shadow: 0 8px 16px rgba(31, 41, 51, 0.12);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(244, 124, 32, 0.24);
+  outline-offset: 3px;
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(31, 41, 51, 0.1);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+  transform: none;
+}
+
+.button.orange {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-color: var(--color-orange-hover);
+}
+
+.button.orange:hover,
+.button.orange:focus-visible {
+  background-color: var(--color-orange-hover);
+  border-color: #b94f0f;
+}
+
+.button.green {
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border-color: var(--color-green-hover);
+}
+
+.button.green:hover,
+.button.green:focus-visible {
+  background-color: var(--color-green-hover);
+  border-color: #1d4428;
+}
+
+.button.gray {
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+  border-color: #cfd4dc;
+}
+
+.button.gray:hover,
+.button.gray:focus-visible {
+  color: var(--color-green);
+  background-color: var(--color-green-light);
+  border-color: rgba(47, 107, 63, 0.32);
 }
