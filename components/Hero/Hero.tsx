@@ -14,15 +14,18 @@ export default function Hero() {
         <div className={styles.textBlock}>
           <p className={styles.eyebrow}>Пакувальні матеріали для B2B</p>
           <h1 className={styles.title}>
-            Коли надійність пакування гарантує успіх виробництва.
+            Коли надійність пакування гарантує успіх виробництва
           </h1>
           <p className={styles.description}>
             Термозбіжні пакети, плівки та пакувальні рішення для харчової
-            промисловості й автоматизованих виробничих ліній.
+            промисловості й автоматизованих виробничих ліній
           </p>
 
           <div className={styles.actions}>
-            <Link href="#products" className={`button orange ${styles.primaryLink}`}>
+            <Link
+              href="#products"
+              className={`button orange ${styles.primaryLink}`}
+            >
               Переглянути пропозиції
             </Link>
             <Link

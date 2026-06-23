@@ -54,7 +54,7 @@ export default function Header() {
 
           <span className={styles.logoText}>
             <span className={styles.logoName}>ЮНІВАК</span>
-            <span className={styles.logoCaption}>УКРАЇНА</span>
+            <span className={styles.logoName}>УКРАЇНА</span>
           </span>
         </Link>
 
