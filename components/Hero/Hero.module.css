@@ -23,9 +23,10 @@
 .textBlock {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  align-items: flex-start;
 
+  width: 100%;
   max-width: 640px;
 }
 
@@ -62,12 +63,14 @@
 .actions {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 14px;
   margin-top: 32px;
 }
 
 .primaryLink {
-  width: 368px;
+  width: 100%;
+  max-width: 368px;
   min-height: 48px;
   padding-right: 20px;
   padding-left: 20px;
@@ -75,7 +78,8 @@
 }
 
 .secondaryLink {
-  width: 368px;
+  width: 100%;
+  max-width: 368px;
   min-height: 48px;
   padding-right: 22px;
   padding-left: 22px;
@@ -136,6 +140,7 @@
   .primaryLink,
   .secondaryLink {
     width: 288px;
+    max-width: none;
   }
 }
 

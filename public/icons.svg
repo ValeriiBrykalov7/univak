@@ -6,5 +6,26 @@
 <path fill="#f88430" style="fill: var(--color3, #f88430)" d="M23.524 17.292c0.058 0.103 0.003 0.815-0.010 0.982-0.055 0.688-0.161 1.351-0.368 2.009-0.636 2.018-2.278 3.732-4.356 4.25-0.728 0.181-1.181 0.138-1.91 0.194-1.043 0.081-2.211 0.491-3.094 1.053-0.302 0.192-0.646 0.493-0.922 0.726l-0.041-0.050c-0.040-0.337-0.006-0.715-0.012-1.055-0.031-1.682 0.057-2.982 1.301-4.26 0.45-0.472 0.99-0.849 1.588-1.11 1.744-0.763 2.895-0.226 4.686-0.817 0.833-0.271 1.611-0.689 2.295-1.236 0.288-0.226 0.545-0.472 0.844-0.686z"></path>
 <path fill="#c7d2cb" style="fill: var(--color4, #c7d2cb)" d="M23.489 23.080l0.035 0.052c-0.208 3.582-2.744 6.475-6.336 6.939-0.662 0.086-1.387 0.057-2.057 0.057-0.709 0.004-1.419 0.001-2.128-0.008l-0.035-0.059c-0.023-0.571 0.213-1.178 0.489-1.664 0.386-0.681 0.659-0.97 1.286-1.389 1.195-0.798 2.072-0.676 3.394-0.8 0.514-0.048 1.022-0.148 1.516-0.297 1.358-0.413 3.171-1.584 3.836-2.83z"></path>
 </symbol>
+<symbol id="icon-package-layers" viewBox="0 0 24 24">
+<path d="M4 7.5 12 3l8 4.5-8 4.5L4 7.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 12 12 16.5 20 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 16.5 12 21l8-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol>
+<symbol id="icon-support" viewBox="0 0 24 24">
+<path d="M5 12a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+<path d="M5 12v3.2a2 2 0 0 0 2 2h1v-6H7a2 2 0 0 0-2 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+<path d="M19 12v3.2a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+<path d="M16 17.2c-.7 1.4-2 2.1-4 2.1h-1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+</symbol>
+<symbol id="icon-shield-check" viewBox="0 0 24 24">
+<path d="M12 21s7-3.4 7-10.2V5.2L12 3 5 5.2v5.6C5 17.6 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="m8.8 12.1 2.1 2.1 4.5-4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol>
+<symbol id="icon-truck-route" viewBox="0 0 24 24">
+<path d="M3.5 6h10.2v9.2H3.5V6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+<path d="M13.7 9h3.2l3.6 3.5v2.7h-6.8V9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+<path d="M7.2 18.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM17.5 18.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M3.5 15.2h1.9M9 15.2h6.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+</symbol>
 </defs>
 </svg>
