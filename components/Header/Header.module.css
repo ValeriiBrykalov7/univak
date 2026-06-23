@@ -20,7 +20,18 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  height: 100%;
   min-width: 0;
+  line-height: 1;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 55px;
+  height: 55px;
 }
 
 .logoMark {
@@ -34,11 +45,6 @@
   background-color: var(--color-green-light);
   border: 1px solid rgba(47, 107, 63, 0.14);
   border-radius: 10px;
-}
-
-.logoIcon {
-  width: 32px;
-  height: 32px;
 }
 
 .packageShape {
@@ -76,6 +82,8 @@
 .logoText {
   display: grid;
   gap: 2px;
+  align-content: center;
+  line-height: 1;
 }
 
 .logoName {
@@ -351,8 +359,8 @@
   }
 
   .logoIcon {
-    width: 35px;
-    height: 35px;
+    width: 55px;
+    height: 55px;
   }
 
   .logoName {

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { MouseEvent, useRef } from "react";
 import styles from "./Header.module.css";
+import Icon from "../Icon/Icon";
 
 const navLinks = [
   { href: "#about", label: "Про компанію" },
@@ -49,26 +50,11 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label="UNIVAK - на головну">
-          <span className={styles.logoMark} aria-hidden="true">
-            <svg viewBox="0 0 48 48" role="img" className={styles.logoIcon}>
-              <path
-                d="M12 17.5 24 10l12 7.5v18L24 43 12 35.5v-18Z"
-                className={styles.packageShape}
-              />
-              <path
-                d="M12 17.5 24 25l12-7.5M24 25v18"
-                className={styles.packageLine}
-              />
-              <path
-                d="M27.5 14.5c6.5-5.5 12.5-4.5 14-3.5.5 5.5-4 12-11 12-2.5 0-4.3-.7-5.5-1.7"
-                className={styles.leafShape}
-              />
-              <path d="M27 21c2.4-3.2 5.3-5 9-6" className={styles.leafLine} />
-            </svg>
-          </span>
+          <Icon name="logo" size={55} className={styles.logoIcon} />
+
           <span className={styles.logoText}>
-            <span className={styles.logoName}>UNIVAK</span>
-            <span className={styles.logoCaption}>Food packaging</span>
+            <span className={styles.logoName}>ЮНІВАК</span>
+            <span className={styles.logoCaption}>УКРАЇНА</span>
           </span>
         </Link>
 

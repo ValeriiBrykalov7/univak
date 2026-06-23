@@ -1,13 +1,19 @@
 interface IconProps {
   name: string;
-  size: number;
-  className: string;
+  size?: number;
+  className?: string;
 }
 
 export default function Icon({ name, size, className }: IconProps) {
   return (
-    <svg width={size} height={size} className={className}>
-      <use href={`/sprite.svg#${name}`} />
+    <svg
+      width={size}
+      height={size}
+      className={className}
+      aria-hidden="true"
+      focusable="false"
+    >
+      <use href={`/icons.svg#${name}`} />
     </svg>
   );
 }

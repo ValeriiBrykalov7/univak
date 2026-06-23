@@ -1,0 +1,168 @@
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-white);
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url("/images/packaging-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  min-height: calc(100dvh - 64px);
+  padding: 64px 16px 56px;
+  margin: 0 auto;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  max-width: 640px;
+}
+
+.eyebrow {
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-white);
+  background-color: rgba(47, 107, 63, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  max-width: 640px;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.description {
+  max-width: 620px;
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.primaryLink {
+  width: 100%;
+  min-height: 48px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.secondaryLink {
+  min-height: 48px;
+  padding-right: 22px;
+  padding-left: 22px;
+  font-size: 15px;
+  backdrop-filter: blur(8px);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 680px;
+  margin-top: 28px;
+}
+
+.badge {
+  padding: 9px 13px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    max-width: 704px;
+    padding: 96px 24px 82px;
+  }
+
+  .textBlock {
+    max-width: 760px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .title {
+    max-width: 720px;
+    font-size: 58px;
+    line-height: 1.08;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .primaryLink,
+  .secondaryLink {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero {
+    min-height: calc(100dvh - 74px);
+    background-position: center right;
+    padding-left: 80px;
+  }
+
+  .content {
+    max-width: 1180px;
+    min-height: calc(100dvh - 74px);
+    padding: 112px 0 92px;
+  }
+
+  .title {
+    font-size: 68px;
+  }
+
+  .description {
+    margin-top: 24px;
+    font-size: 19px;
+  }
+
+  .actions {
+    margin-top: 36px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 500px;
+  }
+}
