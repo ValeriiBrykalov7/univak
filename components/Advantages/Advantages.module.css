@@ -1,0 +1,177 @@
+.section {
+  padding: 72px 0;
+  background-color: var(--color-white);
+}
+
+.container {
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 680px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-green);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--color-text-main);
+}
+
+.list {
+  display: grid;
+  gap: 28px;
+  margin-top: 46px;
+}
+
+.item {
+  position: relative;
+  min-height: 220px;
+  padding: 72px 0 0;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 220ms ease-in-out;
+}
+
+.number {
+  position: absolute;
+  top: -7px;
+  left: -10px;
+  z-index: -1;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 150px;
+  font-weight: 800;
+  line-height: 0.8;
+  color: var(--color-green-light);
+  transition:
+    color 220ms ease-in-out,
+    transform 220ms ease-in-out;
+  user-select: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+}
+
+.itemTitle {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-text-main);
+  transition: color 220ms ease-in-out;
+}
+
+.description {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item:hover {
+    transform: translateY(-4px);
+  }
+
+  .item:hover .number {
+    color: rgba(47, 107, 63, 0.14);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .item:hover .itemTitle {
+    color: var(--color-green);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .section {
+    padding: 92px 0;
+  }
+
+  .container {
+    max-width: 704px;
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 54px;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 58px;
+  }
+
+  .item {
+    min-height: 320px;
+    padding-top: 118px;
+  }
+
+  .number {
+    top: 12px;
+    left: -16px;
+    font-size: 164px;
+  }
+
+  .itemTitle {
+    font-size: 27px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .section {
+    padding: 112px 0 118px;
+  }
+
+  .container {
+    max-width: 1180px;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .list {
+    gap: 72px;
+    margin-top: 70px;
+  }
+
+  .item {
+    min-height: 300px;
+    padding-top: 118px;
+  }
+
+  .number {
+    top: 0;
+    left: -12px;
+    font-size: 192px;
+  }
+
+  .itemTitle {
+    font-size: 34px;
+  }
+
+  .description {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+}
