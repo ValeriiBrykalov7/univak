@@ -1,44 +1,25 @@
 .item {
   --card-accent: var(--color-green);
-  --card-accent-strong: var(--color-green-hover);
+  --card-accent-text: color-mix(
+    in srgb,
+    var(--card-accent) 78%,
+    var(--color-text-main)
+  );
 
   display: flex;
   width: 100%;
 }
 
+.item:nth-child(4n + 1) {
+  --card-accent: var(--color-green-hover);
+}
+
+.item:nth-child(4n + 2) {
+  --card-accent: var(--color-orange);
+}
+
 .item:nth-child(4n) {
   --card-accent: #f9a969;
-  --card-accent-strong: var(--color-orange);
-}
-
-.item:nth-child(5n) {
-  --card-accent: var(--color-green-hover);
-  --card-accent-strong: var(--color-green);
-}
-
-.item:nth-child(6n) {
-  --card-accent: #f9a969;
-  --card-accent-strong: var(--color-orange);
-}
-
-.item:nth-child(7n) {
-  --card-accent: var(--color-green-hover);
-  --card-accent-strong: var(--color-green);
-}
-
-.item:nth-child(8n) {
-  --card-accent: #f9a969;
-  --card-accent-strong: var(--color-orange);
-}
-
-.item:nth-child(1n) {
-  --card-accent: var(--color-green-hover);
-  --card-accent-strong: var(--color-green);
-}
-
-.item:nth-child(2n) {
-  --card-accent: #f9a969;
-  --card-accent-strong: var(--color-orange);
 }
 
 .card {
@@ -214,15 +195,35 @@
 }
 
 .action {
+  position: relative;
   display: inline-flex;
   gap: 8px;
   align-items: center;
   width: fit-content;
   margin-top: auto;
+  padding-bottom: 8px;
   font-size: 15px;
   font-weight: 800;
   line-height: 1;
   color: var(--color-green);
+  transition: color 220ms ease-in-out;
+}
+
+.action::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-color: var(--card-accent);
+  border-radius: 100px;
+  transform: scaleX(0.28);
+  transform-origin: left;
+  opacity: 0.72;
+  transition:
+    opacity 220ms ease-in-out,
+    transform 260ms ease-in-out;
 }
 
 .arrow {
@@ -259,11 +260,11 @@
 }
 
 .card:hover .title {
-  color: var(--card-accent-strong);
+  color: var(--card-accent-text);
 }
 
 .card:hover .tagBadge {
-  color: var(--card-accent-strong);
+  color: var(--card-accent-text);
   background-color: color-mix(
     in srgb,
     var(--card-accent) 14%,
@@ -283,7 +284,19 @@
   transform: translateY(-1px);
 }
 
-.card:hover .arrow {
+.card:hover .action,
+.card:focus-visible .action {
+  color: var(--card-accent-text);
+}
+
+.card:hover .action::after,
+.card:focus-visible .action::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.card:hover .arrow,
+.card:focus-visible .arrow {
   transform: translateX(4px);
 }
 
