@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
+import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import "./globals.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
