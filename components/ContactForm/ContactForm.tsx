@@ -1,97 +1,72 @@
 "use client";
 
-import { useState } from "react";
-import type { FieldErrors, Resolver } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { toast } from "sonner";
 
 import Button from "@/components/Button/Button";
 import Icon from "@/components/Icon/Icon";
+import Loader from "@/components/Loader/Loader";
+import {
+  contactFormSchema,
+  type ContactFormValues,
+} from "@/lib/validation/contactFormSchema";
 
 import styles from "./ContactForm.module.css";
 
-type ContactFormValues = {
-  name: string;
-  phone: string;
-  message: string;
-};
-
-const contactFormSchema: yup.ObjectSchema<ContactFormValues> = yup
-  .object({
-    name: yup.string().trim().required("Вкажіть ім’я"),
-    phone: yup
-      .string()
-      .trim()
-      .required("Вкажіть номер телефону")
-      .matches(/^[+\d\s()-]{7,20}$/, "Вкажіть коректний номер телефону"),
-    message: yup
-      .string()
-      .trim()
-      .required("Напишіть повідомлення")
-      .min(5, "Повідомлення має містити щонайменше 5 символів"),
-  })
-  .required();
-
-const yupResolver: Resolver<ContactFormValues> = async (values) => {
-  try {
-    const validatedValues = await contactFormSchema.validate(values, {
-      abortEarly: false,
-    });
-
-    return {
-      values: validatedValues,
-      errors: {},
-    };
-  } catch (error) {
-    if (!(error instanceof yup.ValidationError)) {
-      return {
-        values: {},
-        errors: {},
-      };
-    }
-
-    const formErrors: FieldErrors<ContactFormValues> = {};
-
-    error.inner.forEach((validationError) => {
-      const fieldName = validationError.path as keyof ContactFormValues;
-
-      if (fieldName && !formErrors[fieldName]) {
-        formErrors[fieldName] = {
-          type: validationError.type ?? "validation",
-          message: validationError.message,
-        };
-      }
-    });
-
-    return {
-      values: {},
-      errors: formErrors,
-    };
-  }
-};
+const CONTACT_TOAST_ID = "contact-form-result";
 
 export default function ContactForm() {
-  const [isValidated, setIsValidated] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
-    resolver: yupResolver,
+    resolver: yupResolver(contactFormSchema),
     mode: "onBlur",
     defaultValues: {
       name: "",
       phone: "",
+      email: "",
       message: "",
     },
   });
 
-  const onSubmit = handleSubmit(() => {
-    setIsValidated(true);
+  const onSubmit = handleSubmit(async (values) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Contact request failed");
+      }
+
+      reset();
+      toast.success("Дякуємо! Вашу заявку надіслано.", {
+        id: CONTACT_TOAST_ID,
+        description: "Ми зв’яжемося з вами найближчим часом.",
+      });
+    } catch {
+      toast.error("Не вдалося надіслати заявку.", {
+        id: CONTACT_TOAST_ID,
+        description: "Спробуйте ще раз або зателефонуйте нам.",
+      });
+    }
   });
 
   return (
-    <form className={styles.form} onSubmit={onSubmit} noValidate>
+    <form
+      className={styles.form}
+      onSubmit={onSubmit}
+      noValidate
+      aria-busy={isSubmitting}
+    >
       <div className={styles.header}>
         <p className={styles.eyebrow}>Зворотний зв’язок</p>
         <h2 className={styles.title}>Напишіть нам</h2>
@@ -108,11 +83,15 @@ export default function ContactForm() {
             type="text"
             placeholder="Ваше ім’я"
             autoComplete="name"
+            aria-required="true"
             aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? "contact-name-error" : undefined}
             {...register("name")}
           />
           {errors.name ? (
-            <span className={styles.error}>{errors.name.message}</span>
+            <span className={styles.error} id="contact-name-error">
+              {errors.name.message}
+            </span>
           ) : null}
         </label>
 
@@ -126,28 +105,60 @@ export default function ContactForm() {
             type="tel"
             placeholder="+38 050 000 00 00"
             autoComplete="tel"
+            aria-required="true"
             aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? "contact-phone-error" : undefined}
             {...register("phone")}
           />
           {errors.phone ? (
-            <span className={styles.error}>{errors.phone.message}</span>
+            <span className={styles.error} id="contact-phone-error">
+              {errors.phone.message}
+            </span>
           ) : null}
         </label>
 
         <label className={styles.field}>
           <span className={styles.label}>
             <Icon name="icon-mail" size={16} />
+            Email
+          </span>
+          <input
+            className={styles.input}
+            type="email"
+            placeholder="name@example.com"
+            autoComplete="email"
+            aria-required="true"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? "contact-email-error" : undefined}
+            {...register("email")}
+          />
+          {errors.email ? (
+            <span className={styles.error} id="contact-email-error">
+              {errors.email.message}
+            </span>
+          ) : null}
+        </label>
+
+        <label className={styles.field}>
+          <span className={styles.label}>
+            <Icon name="icon-message" size={16} />
             Повідомлення
+            <span className={styles.optional}>(необов’язково)</span>
           </span>
           <textarea
             className={`${styles.input} ${styles.textarea}`}
             placeholder="Коротко опишіть, які пакувальні матеріали вас цікавлять"
             rows={5}
             aria-invalid={Boolean(errors.message)}
+            aria-describedby={
+              errors.message ? "contact-message-error" : undefined
+            }
             {...register("message")}
           />
           {errors.message ? (
-            <span className={styles.error}>{errors.message.message}</span>
+            <span className={styles.error} id="contact-message-error">
+              {errors.message.message}
+            </span>
           ) : null}
         </label>
       </div>
@@ -156,15 +167,13 @@ export default function ContactForm() {
         className={`orange ${styles.submit}`}
         type="submit"
         disabled={isSubmitting}
+        aria-busy={isSubmitting}
       >
-        Надіслати
+        <span className={styles.submitContent}>
+          {isSubmitting ? <Loader /> : null}
+          <span>{isSubmitting ? "Надсилаємо" : "Надіслати"}</span>
+        </span>
       </Button>
-
-      {isValidated ? (
-        <p className={styles.status} role="status">
-          Дані перевірено. Відправку повідомлень підключимо наступним етапом.
-        </p>
-      ) : null}
     </form>
   );
 }

@@ -1,0 +1,40 @@
+.toaster {
+  --border-radius: 12px;
+  --success-bg: var(--color-green-light);
+  --success-border: rgba(47, 107, 63, 0.3);
+  --success-text: var(--color-green-hover);
+  --error-bg: var(--color-orange-light);
+  --error-border: rgba(244, 124, 32, 0.34);
+  --error-text: #9f430f;
+  font-family: var(--font-body), sans-serif;
+}
+
+.toast {
+  padding: 15px 17px !important;
+  gap: 10px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 14px 34px rgba(31, 41, 51, 0.16) !important;
+  font-family: var(--font-body), sans-serif !important;
+  font-size: 14px !important;
+}
+
+.success,
+.error {
+  border-left-width: 4px !important;
+}
+
+.title {
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+}
+
+.description {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+.closeButton {
+  width: 22px !important;
+  height: 22px !important;
+  cursor: pointer !important;
+}

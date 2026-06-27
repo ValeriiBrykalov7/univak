@@ -53,6 +53,12 @@
   color: var(--color-orange);
 }
 
+.optional {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
 .input {
   width: 100%;
   min-height: 48px;
@@ -111,12 +117,13 @@
   margin-top: 22px;
 }
 
-.status {
-  margin-top: 14px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  color: var(--color-green);
+.submitContent {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {

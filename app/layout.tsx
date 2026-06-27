@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import ToastProvider from "@/components/ToastProvider/ToastProvider";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ToastProvider />
       </body>
     </html>
   );
