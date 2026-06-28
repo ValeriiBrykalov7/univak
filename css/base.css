@@ -4,6 +4,12 @@ html {
   scroll-behavior: smooth;
 }
 
+html.mobile-menu-open,
+html.mobile-menu-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 :root {
   --color-green: #2f6b3f;
   --color-green-hover: #255a35;

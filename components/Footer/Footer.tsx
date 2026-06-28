@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Icon from "@/components/Icon/Icon";
+import { socialLinks } from "@/data/socialLinks";
 
 import styles from "./Footer.module.css";
 
@@ -9,19 +10,6 @@ const footerLinks = [
   { href: "#about", label: "Про компанію" },
   { href: "#products", label: "Наші пропозиції" },
   { href: "#contacts", label: "Контакти" },
-];
-
-const socialLinks = [
-  {
-    href: "https://wa.me/380504439213",
-    label: "WhatsApp",
-    icon: "icon-whatsapp",
-  },
-  {
-    href: "tg://resolve?phone=380504439213",
-    label: "Telegram",
-    icon: "icon-telegram",
-  },
 ];
 
 export default function Footer() {

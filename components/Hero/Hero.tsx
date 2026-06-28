@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import styles from "./Hero.module.css";
 
 const badges = [
