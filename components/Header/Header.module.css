@@ -2,13 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(248, 250, 247, 0.9);
-  border-bottom: 1px solid rgba(47, 107, 63, 0.1);
+  background-color: rgba(248, 250, 247, 0.96);
+  border-bottom: 1px solid rgba(47, 107, 63, 0.14);
+  box-shadow: 0 8px 24px rgba(31, 41, 51, 0.06);
   backdrop-filter: blur(14px) saturate(1.15);
-  transition:
-    background-color 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease;
 }
 
 .header::after {
@@ -24,23 +21,9 @@
     var(--color-green) 0 72%,
     var(--color-orange) 72% 100%
   );
-  opacity: 0.28;
+  opacity: 0.38;
   transform: scaleX(0.24);
   transform-origin: left;
-  transition:
-    opacity 220ms ease,
-    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.scrolled {
-  background-color: rgba(248, 250, 247, 0.97);
-  border-color: rgba(47, 107, 63, 0.14);
-  box-shadow: 0 10px 30px rgba(31, 41, 51, 0.08);
-}
-
-.scrolled::after {
-  opacity: 0.62;
-  transform: scaleX(1);
 }
 
 .inner {
@@ -50,7 +33,6 @@
   height: 64px;
   padding: 0 16px;
   margin: 0 auto;
-  transition: height 220ms ease;
 }
 
 .logo {
@@ -150,14 +132,12 @@
 }
 
 .navLink:hover,
-.navLink:focus-visible,
-.activeLink {
+.navLink:focus-visible {
   color: var(--color-green);
 }
 
 .navLink:hover::after,
-.navLink:focus-visible::after,
-.activeLink::after {
+.navLink:focus-visible::after {
   transform: scaleX(1);
 }
 
@@ -174,18 +154,6 @@
 }
 
 .actions .cta {
-  display: none;
-}
-
-.menuDetails {
-  display: block;
-}
-
-.menuDetails > summary {
-  list-style: none;
-}
-
-.menuDetails > summary::-webkit-details-marker {
   display: none;
 }
 
@@ -228,7 +196,7 @@
   height: 2px;
   background-color: currentColor;
   border-radius: 100px;
-  transition: background-color 160ms ease-in-out;
+  transition: background-color 10ms ease-in-out;
 }
 
 .burgerLine::before,
@@ -253,16 +221,16 @@
   top: 7px;
 }
 
-.menuDetails[open] .burgerLine {
+.burgerOpen .burgerLine {
   background-color: transparent;
 }
 
-.menuDetails[open] .burgerLine::before {
+.burgerOpen .burgerLine::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.menuDetails[open] .burgerLine::after {
+.burgerOpen .burgerLine::after {
   top: 0;
   transform: rotate(-45deg);
 }
@@ -287,21 +255,15 @@
   transition:
     opacity 220ms ease-in-out,
     transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
-    visibility 220ms ease-in-out;
+    visibility 0s linear 280ms;
 }
 
-.menuDetails[open] .mobilePanel {
+.mobilePanelOpen {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-}
-
-.menuDetails[data-closing="true"] .mobilePanel {
-  visibility: visible;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-16px);
+  transition-delay: 0s;
 }
 
 .mobileNav {
@@ -335,24 +297,26 @@
   transform: translateY(-12px);
   transition:
     color 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    opacity 240ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.menuDetails[open] .mobileLink {
-  animation: mobileLinkEnter 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.mobilePanelOpen .mobileLink {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.menuDetails[open] .mobileLink:nth-child(2) {
-  animation-delay: 60ms;
+.mobilePanelOpen .mobileLink:nth-child(2) {
+  transition-delay: 60ms;
 }
 
-.menuDetails[open] .mobileLink:nth-child(3) {
-  animation-delay: 120ms;
+.mobilePanelOpen .mobileLink:nth-child(3) {
+  transition-delay: 120ms;
 }
 
 .mobileLink:hover,
-.mobileLink:focus-visible,
-.activeMobileLink {
+.mobileLink:focus-visible {
   color: var(--color-green);
   border-color: rgba(244, 124, 32, 0.48);
 }
@@ -551,23 +515,13 @@
   }
 
   .burger,
-  .menuDetails,
   .mobilePanel {
     display: none;
   }
 }
 
-@keyframes mobileLinkEnter {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .header,
   .header::after,
-  .inner,
   .logo,
   .logoIcon,
   .navLink::after,
@@ -582,9 +536,8 @@
     transition: none;
   }
 
-  .menuDetails[open] .mobileLink {
+  .mobilePanelOpen .mobileLink {
     opacity: 1;
     transform: none;
-    animation: none;
   }
 }
