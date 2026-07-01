@@ -10,7 +10,9 @@
   transition:
     background-color 320ms ease,
     border-color 320ms ease,
-    box-shadow 320ms ease;
+    box-shadow 320ms ease,
+    opacity 240ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .header::after {
@@ -35,14 +37,25 @@
 }
 
 .pastHero {
-  background-color: rgba(248, 250, 247, 0.68);
-  border-color: rgba(47, 107, 63, 0.1);
-  box-shadow: 0 8px 26px rgba(31, 41, 51, 0.07);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .pastHero::after {
   opacity: 0;
   transform: scaleX(0);
+}
+
+.pastHero .logo,
+.pastHero .desktopNav,
+.pastHero .burger {
+  border-color: rgba(47, 107, 63, 0.14);
+  box-shadow: 0 8px 24px rgba(31, 41, 51, 0.08);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  backdrop-filter: blur(20px) saturate(1.2);
 }
 
 .menuOpen {
@@ -62,6 +75,22 @@
   transform: scaleX(0.24);
 }
 
+.menuOpen .logo,
+.menuOpen .desktopNav,
+.menuOpen .burger {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-100% - 16px));
+}
+
 .inner {
   display: flex;
   align-items: center;
@@ -75,20 +104,27 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  height: 100%;
+  height: 52px;
   min-width: 0;
+  padding: 0 10px 0 6px;
+  margin-left: -6px;
   line-height: 1;
-  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
   transition:
     color 180ms ease-in-out,
+    background-color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease,
     transform 180ms ease-in-out;
 }
 
 .logoIcon {
   display: block;
   flex: 0 0 auto;
-  width: 52px;
-  height: 52px;
+  width: 36px;
+  height: 36px;
   transition:
     filter 220ms ease-in-out,
     transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -142,6 +178,13 @@
 
 .desktopNav {
   display: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
 }
 
 .navLink {
@@ -193,21 +236,6 @@
   display: none;
 }
 
-.pastHero .actions .cta {
-  color: var(--color-orange-hover);
-  background-color: rgba(244, 124, 32, 0.12);
-  border-color: rgba(244, 124, 32, 0.38);
-  box-shadow: none;
-}
-
-.pastHero .actions .cta:hover,
-.pastHero .actions .cta:focus-visible {
-  color: var(--color-white);
-  background-color: var(--color-orange);
-  border-color: var(--color-orange-hover);
-  box-shadow: 0 8px 18px rgba(244, 124, 32, 0.2);
-}
-
 .burger {
   display: inline-flex;
   align-items: center;
@@ -218,9 +246,11 @@
   cursor: pointer;
   color: var(--color-green);
   background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 8px;
   transition:
     background-color 180ms ease-in-out,
+    border-color 180ms ease-in-out,
     box-shadow 180ms ease-in-out,
     transform 180ms ease-in-out;
 }
@@ -542,7 +572,11 @@
   }
 
   .logoIcon {
-    width: 54px;
+    width: 36px;
+    height: 44px;
+  }
+
+  .logo {
     height: 54px;
   }
 
@@ -553,14 +587,16 @@
   .desktopNav {
     display: inline-flex;
     align-items: center;
+    height: 54px;
     gap: 30px;
+    padding: 6px 10px;
     margin-right: auto;
-    margin-left: 46px;
+    margin-left: 36px;
   }
 
   .actions .cta {
     display: inline-flex;
-    min-height: 42px;
+    height: 42px;
     padding-right: 22px;
     padding-left: 22px;
     font-size: 15px;

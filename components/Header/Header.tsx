@@ -17,10 +17,10 @@ const navLinks = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("mobile-menu-open", isMenuOpen);
-    console.log("isMenuOpen", isMenuOpen);
     return () => {
       document.documentElement.classList.remove("mobile-menu-open");
     };
@@ -47,15 +47,32 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const footer = document.getElementById("contacts");
+
+    if (!footer) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsFooterVisible(entry.isIntersecting),
+      { threshold: 0.01 },
+    );
+
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header
-      className={`${styles.header} ${isPastHero ? styles.pastHero : ""} ${isMenuOpen ? styles.menuOpen : ""}`}
+      className={`${styles.header} ${isPastHero ? styles.pastHero : ""} ${isMenuOpen ? styles.menuOpen : ""} ${isFooterVisible ? styles.hidden : ""}`}
     >
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label="ЮНІВАК — на головну">
-          <Icon name="logo" size={55} className={styles.logoIcon} />
+          <Icon name="logo" size={36} className={styles.logoIcon} />
 
           <span className={styles.logoText}>
             <span className={styles.logoName}>ЮНІВАК</span>
