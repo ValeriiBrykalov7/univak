@@ -1,9 +1,5 @@
 @import "modern-normalize/modern-normalize.css";
 
-html {
-  scroll-behavior: smooth;
-}
-
 html.mobile-menu-open,
 html.mobile-menu-open body {
   overflow: hidden;
@@ -31,6 +27,11 @@ body {
   font-family: var(--font-body), sans-serif;
   color: var(--color-text-main);
   background-color: #f8faf7;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 80px;
 }
 
 h1,
@@ -156,4 +157,11 @@ h3 {
 
 .button.transparent:focus-visible {
   outline-color: color-mix(in srgb, currentColor 24%, transparent);
+}
+
+@media only screen and (min-width: 1440px) {
+  section[id],
+  footer[id] {
+    scroll-margin-top: 96px;
+  }
 }

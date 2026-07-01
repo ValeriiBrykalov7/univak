@@ -108,6 +108,7 @@ export default function Header() {
             id="mobile-navigation"
             className={`${styles.mobilePanel} ${isMenuOpen ? styles.mobilePanelOpen : ""}`}
             aria-hidden={!isMenuOpen}
+            data-lenis-prevent
           >
             <nav
               className={`container ${styles.mobileNav}`}

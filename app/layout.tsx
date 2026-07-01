@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider/SmoothScrollProvider";
 import ToastProvider from "@/components/ToastProvider/ToastProvider";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -27,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="uk" className={`${manrope.variable} ${inter.variable}`}>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <ToastProvider />
+        <SmoothScrollProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ToastProvider />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
