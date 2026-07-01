@@ -10,7 +10,7 @@ const badges = [
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="hero">
       <div className={`container ${styles.content}`}>
         <div className={styles.textBlock}>
           <p className={styles.eyebrow}>Пакувальні матеріали для B2B</p>

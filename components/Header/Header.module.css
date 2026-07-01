@@ -5,7 +5,12 @@
   background-color: rgba(248, 250, 247, 0.96);
   border-bottom: 1px solid rgba(47, 107, 63, 0.14);
   box-shadow: 0 8px 24px rgba(31, 41, 51, 0.06);
-  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  transition:
+    background-color 320ms ease,
+    border-color 320ms ease,
+    box-shadow 320ms ease;
 }
 
 .header::after {
@@ -24,6 +29,37 @@
   opacity: 0.38;
   transform: scaleX(0.24);
   transform-origin: left;
+  transition:
+    opacity 280ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pastHero {
+  background-color: rgba(248, 250, 247, 0.68);
+  border-color: rgba(47, 107, 63, 0.1);
+  box-shadow: 0 8px 26px rgba(31, 41, 51, 0.07);
+}
+
+.pastHero::after {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuOpen {
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(248, 250, 247, 0.98);
+  border-color: rgba(47, 107, 63, 0.14);
+  box-shadow: 0 8px 24px rgba(31, 41, 51, 0.08);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.menuOpen::after {
+  opacity: 0.38;
+  transform: scaleX(0.24);
 }
 
 .inner {
@@ -157,6 +193,21 @@
   display: none;
 }
 
+.pastHero .actions .cta {
+  color: var(--color-orange-hover);
+  background-color: rgba(244, 124, 32, 0.12);
+  border-color: rgba(244, 124, 32, 0.38);
+  box-shadow: none;
+}
+
+.pastHero .actions .cta:hover,
+.pastHero .actions .cta:focus-visible {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-color: var(--color-orange-hover);
+  box-shadow: 0 8px 18px rgba(244, 124, 32, 0.2);
+}
+
 .burger {
   display: inline-flex;
   align-items: center;
@@ -236,12 +287,13 @@
 }
 
 .mobilePanel {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 64px;
   right: 0;
+  bottom: 0;
   left: 0;
   z-index: 49;
-  height: calc(100dvh - 64px);
+  height: auto;
   overflow: hidden;
   overscroll-behavior: none;
   visibility: hidden;
@@ -521,6 +573,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header,
   .header::after,
   .logo,
   .logoIcon,

@@ -16,22 +16,43 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle(
-      "mobile-menu-open",
-      isMenuOpen,
-    );
-
+    document.documentElement.classList.toggle("mobile-menu-open", isMenuOpen);
+    console.log("isMenuOpen", isMenuOpen);
     return () => {
       document.documentElement.classList.remove("mobile-menu-open");
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+
+    if (!hero) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsPastHero(
+          !entry.isIntersecting && entry.boundingClientRect.bottom <= 0,
+        );
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isPastHero ? styles.pastHero : ""} ${isMenuOpen ? styles.menuOpen : ""}`}
+    >
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label="ЮНІВАК — на головну">
           <Icon name="logo" size={55} className={styles.logoIcon} />
@@ -95,9 +116,7 @@ export default function Header() {
 
               <div className={styles.mobileFooter}>
                 <div className={styles.mobileSocialRow}>
-                  <p className={styles.mobileSocialTitle}>
-                    Написати директору
-                  </p>
+                  <p className={styles.mobileSocialTitle}>Написати директору</p>
                   <ul
                     className={styles.mobileSocialList}
                     aria-label="Соціальні мережі"
