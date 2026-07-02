@@ -56,5 +56,8 @@
 <path d="M4.5 4.5h15a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H10l-5.5 3v-3a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M7 9h10M7 13h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
 </symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24">
+<path d="m5 8.5 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol>
 </defs>
 </svg>

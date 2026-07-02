@@ -1,0 +1,496 @@
+.product {
+  background-color: #f8faf7;
+}
+
+.hero {
+  position: relative;
+  padding: 30px 0 72px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(47, 107, 63, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 107, 63, 0.045) 1px, transparent 1px),
+    #f8faf7;
+  background-size: 32px 32px;
+}
+
+.heroContainer,
+.sectionContainer,
+.ctaContainer {
+  padding-right: 16px;
+  padding-left: 16px;
+  margin: 0 auto;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-green);
+  transition: color 180ms ease;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--color-orange-hover);
+}
+
+.breadcrumbs a:focus-visible {
+  outline: 3px solid rgba(47, 107, 63, 0.12);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-areas:
+    "content"
+    "image";
+  gap: 42px;
+  margin-top: 38px;
+}
+
+.heroContent {
+  grid-area: content;
+}
+
+.eyebrow,
+.sectionEyebrow,
+.ctaEyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--color-orange-hover);
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 760px;
+  margin-top: 12px;
+  font-size: 32px;
+  line-height: 1.14;
+  color: var(--color-text-main);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.tags li {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.2;
+  color: var(--color-green-hover);
+  background-color: var(--color-green-light);
+  border: 1px solid rgba(47, 107, 63, 0.15);
+  border-radius: 100px;
+}
+
+.description {
+  max-width: 720px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--color-text-muted);
+}
+
+.heroCta {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.imageWrap {
+  position: relative;
+  grid-area: image;
+  aspect-ratio: 4 / 3;
+  min-width: 0;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border: 1px solid rgba(47, 107, 63, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(31, 41, 51, 0.1);
+}
+
+.imageWrap::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.productNumber {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 34px;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-white);
+  background-color: rgba(47, 107, 63, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.benefitsSection,
+.specsSection,
+.seamsSection {
+  padding: 72px 0;
+}
+
+.benefitsSection {
+  background-color: var(--color-white);
+}
+
+.specsSection {
+  background-color: var(--color-green-light);
+}
+
+.seamsSection {
+  background-color: #f8faf7;
+}
+
+.sectionHeader {
+  max-width: 720px;
+}
+
+.sectionHeader h2,
+.ctaContainer h2 {
+  margin-top: 10px;
+  font-size: 30px;
+  line-height: 1.18;
+  color: var(--color-text-main);
+}
+
+.sectionDescription {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.benefitsList {
+  display: grid;
+  gap: 0;
+  margin-top: 34px;
+}
+
+.benefitsList li {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 18px 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-main);
+  border-top: 1px solid var(--color-border);
+}
+
+.benefitIcon {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--color-green);
+}
+
+.specsList {
+  margin-top: 34px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(47, 107, 63, 0.14);
+  border-radius: 8px;
+}
+
+.specRow {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(47, 107, 63, 0.12);
+  transition: background-color 180ms ease;
+}
+
+.specRow:last-child {
+  border-bottom: 0;
+}
+
+.specRow:hover {
+  background-color: var(--color-white);
+}
+
+.specRow dt {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--color-green-hover);
+}
+
+.specRow dd {
+  margin: 0;
+}
+
+.specRow ul {
+  display: grid;
+  gap: 7px;
+}
+
+.specRow li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-main);
+}
+
+.specRow li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  content: "";
+  background-color: var(--color-orange);
+  border-radius: 50%;
+}
+
+.seamsList {
+  display: grid;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.seamCard {
+  overflow: hidden;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-green);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(31, 41, 51, 0.06);
+  transition:
+    border-color 200ms ease,
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.seamCard:hover {
+  border-color: rgba(47, 107, 63, 0.3);
+  box-shadow: 0 18px 34px rgba(47, 107, 63, 0.11);
+  transform: translateY(-3px);
+}
+
+.seamImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 6 / 5;
+  padding: 20px;
+  background-color: rgba(234, 246, 238, 0.38);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.seamImage {
+  width: 100%;
+  max-width: 240px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.seamCard h3 {
+  padding: 18px 20px 20px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--color-text-main);
+}
+
+.ctaSection {
+  padding: 64px 0;
+  color: var(--color-white);
+  background-color: var(--color-green-hover);
+}
+
+.ctaContainer {
+  display: grid;
+  gap: 28px;
+}
+
+.ctaEyebrow {
+  color: #ffc18f;
+}
+
+.ctaContainer h2 {
+  max-width: 700px;
+  color: var(--color-white);
+}
+
+.ctaContainer p:last-child {
+  max-width: 680px;
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.ctaButton {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    padding: 38px 0 88px;
+  }
+
+  .heroContainer,
+  .sectionContainer,
+  .ctaContainer {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .heroGrid {
+    gap: 50px;
+    margin-top: 46px;
+  }
+
+  .title {
+    font-size: 44px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
+  .heroCta {
+    width: fit-content;
+    min-width: 250px;
+  }
+
+  .benefitsSection,
+  .specsSection,
+  .seamsSection {
+    padding: 88px 0;
+  }
+
+  .sectionHeader h2,
+  .ctaContainer h2 {
+    font-size: 38px;
+  }
+
+  .benefitsList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 42px;
+  }
+
+  .specRow {
+    grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.3fr);
+    gap: 34px;
+    padding: 22px 24px;
+  }
+
+  .seamsList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .ctaSection {
+    padding: 76px 0;
+  }
+
+  .ctaContainer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 52px;
+    align-items: center;
+  }
+
+  .ctaButton {
+    width: fit-content;
+    min-width: 210px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero {
+    padding: 44px 0 104px;
+  }
+
+  .heroContainer,
+  .sectionContainer,
+  .ctaContainer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .heroGrid {
+    grid-template-areas: "image content";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+    gap: 74px;
+    align-items: center;
+    margin-top: 54px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .benefitsSection,
+  .specsSection,
+  .seamsSection {
+    padding: 104px 0;
+  }
+
+  .sectionHeader h2,
+  .ctaContainer h2 {
+    font-size: 42px;
+  }
+
+  .benefitsList {
+    column-gap: 72px;
+    margin-top: 42px;
+  }
+
+  .benefitsList li {
+    padding: 20px 0;
+    font-size: 16px;
+  }
+
+  .specsList,
+  .seamsList {
+    margin-top: 42px;
+  }
+
+  .specRow {
+    grid-template-columns: 360px minmax(0, 1fr);
+    padding: 24px 30px;
+  }
+
+  .seamsList {
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breadcrumbs a,
+  .specRow,
+  .seamCard {
+    transition: none;
+  }
+}

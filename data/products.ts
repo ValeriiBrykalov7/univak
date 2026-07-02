@@ -1,3 +1,5 @@
+import type { PrintOptionKey } from "@/data/printOptions";
+
 export type ProductSpec = {
   label: string;
   values: string[];
@@ -10,9 +12,7 @@ export type ProductSeamType = {
 };
 
 export type ProductPrintOption = {
-  title: string;
-  modalKey: string;
-  displayType: "modal";
+  detailsKey: PrintOptionKey;
 };
 
 export type Product = {
@@ -96,9 +96,7 @@ export const products: Product[] = [
       },
     ],
     printOption: {
-      title: "10-кольоровий флексографічний друк",
-      modalKey: "flexographic-print-10-colors",
-      displayType: "modal",
+      detailsKey: "flexographic-print-10-colors",
     },
   },
 
@@ -162,9 +160,7 @@ export const products: Product[] = [
       },
     ],
     printOption: {
-      title: "10-кольоровий флексографічний друк",
-      modalKey: "flexographic-print-10-colors",
-      displayType: "modal",
+      detailsKey: "flexographic-print-10-colors",
     },
   },
 
@@ -215,9 +211,7 @@ export const products: Product[] = [
       },
     ],
     printOption: {
-      title: "10-кольоровий флексографічний друк",
-      modalKey: "flexographic-print-10-colors",
-      displayType: "modal",
+      detailsKey: "flexographic-print-10-colors",
     },
   },
 
@@ -267,9 +261,7 @@ export const products: Product[] = [
       },
     ],
     printOption: {
-      title: "10-кольоровий флексографічний друк",
-      modalKey: "flexographic-print-10-colors",
-      displayType: "modal",
+      detailsKey: "flexographic-print-10-colors",
     },
   },
 
@@ -310,9 +302,7 @@ export const products: Product[] = [
       },
     ],
     printOption: {
-      title: "10-кольоровий флексографічний друк",
-      modalKey: "flexographic-print-10-colors",
-      displayType: "modal",
+      detailsKey: "flexographic-print-10-colors",
     },
   },
 
@@ -355,9 +345,7 @@ export const products: Product[] = [
       },
     ],
     printOption: {
-      title: "10-кольоровий флексографічний друк",
-      modalKey: "flexographic-print-10-colors",
-      displayType: "modal",
+      detailsKey: "flexographic-print-10-colors",
     },
   },
 

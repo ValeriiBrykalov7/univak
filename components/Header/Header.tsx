@@ -4,15 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import Icon from "@/components/Icon/Icon";
+import { navigationLinks } from "@/data/navigationLinks";
 import { socialLinks } from "@/data/socialLinks";
 
 import styles from "./Header.module.css";
-
-const navLinks = [
-  { href: "#about", label: "Про компанію" },
-  { href: "#products", label: "Наші пропозиції" },
-  { href: "#contacts", label: "Контакти" },
-];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,7 +76,7 @@ export default function Header() {
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Основна навігація">
-          {navLinks.map((link) => (
+          {navigationLinks.map((link) => (
             <Link key={link.href} href={link.href} className={styles.navLink}>
               {link.label}
             </Link>
@@ -89,7 +84,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Link href="#contacts" className={`button orange ${styles.cta}`}>
+          <Link href="/#contacts" className={`button orange ${styles.cta}`}>
             Зв’язатися
           </Link>
 
@@ -115,7 +110,7 @@ export default function Header() {
               aria-label="Мобільна навігація"
             >
               <div className={styles.mobileLinks}>
-                {navLinks.map((link) => (
+                {navigationLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -157,7 +152,7 @@ export default function Header() {
                 </div>
 
                 <Link
-                  href="#contacts"
+                  href="/#contacts"
                   className={`button orange ${styles.mobileCta}`}
                   onClick={closeMenu}
                 >

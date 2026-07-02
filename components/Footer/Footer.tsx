@@ -2,15 +2,10 @@ import Link from "next/link";
 
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Icon from "@/components/Icon/Icon";
+import { navigationLinks } from "@/data/navigationLinks";
 import { socialLinks } from "@/data/socialLinks";
 
 import styles from "./Footer.module.css";
-
-const footerLinks = [
-  { href: "#about", label: "Про компанію" },
-  { href: "#products", label: "Наші пропозиції" },
-  { href: "#contacts", label: "Контакти" },
-];
 
 export default function Footer() {
   return (
@@ -108,9 +103,9 @@ export default function Footer() {
           <p>© 2026 ЮНІВАК УКРАЇНА. Усі права захищено.</p>
           <nav className={styles.footerNav} aria-label="Навігація футера">
             <ul>
-              {footerLinks.map((link) => (
+              {navigationLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>

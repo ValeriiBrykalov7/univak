@@ -24,13 +24,13 @@ export default function Hero() {
 
           <div className={styles.actions}>
             <Link
-              href="#products"
+              href="/#products"
               className={`button orange ${styles.primaryLink}`}
             >
               Переглянути пропозиції
             </Link>
             <Link
-              href="#contacts"
+              href="/#contacts"
               className={`button transparent ${styles.secondaryLink}`}
             >
               Зв’язатися
