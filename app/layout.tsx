@@ -4,6 +4,11 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider/SmoothScrollProvider";
 import ToastProvider from "@/components/ToastProvider/ToastProvider";
+import {
+  createPageMetadata,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/metadata";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -16,14 +21,20 @@ const inter = Inter({
   variable: "--font-body",
 });
 
-export const metadata: Metadata = {
-  title: "Юнівак Україна",
+const defaultMetadata = createPageMetadata({
+  title: SITE_NAME,
   description:
-    "Виробник та постачальник пакувальних матеріалів для харчової промисловості.",
-  icons: {
-    icon: [{ url: "/icons.svg#logo", type: "image/svg+xml" }],
-    shortcut: "/icons.svg#logo",
-    apple: "/icons.svg#logo",
+    "Пакувальні матеріали та професійні рішення для підприємств харчової промисловості України.",
+  path: "/",
+  absoluteTitle: true,
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  ...defaultMetadata,
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
 };
 
