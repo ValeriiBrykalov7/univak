@@ -12,10 +12,6 @@ export default function ProductsSection() {
           <h2 className={styles.title}>
             Пакувальні рішення для харчового виробництва
           </h2>
-          <p className={styles.description}>
-            Підібрали основні матеріали, з якими працюють виробники молочної,
-            м&apos;ясної та готової харчової продукції.
-          </p>
         </div>
 
         <ul className={styles.list}>
