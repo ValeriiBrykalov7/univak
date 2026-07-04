@@ -91,7 +91,6 @@ export default function PrintInfoExpandable({
                       <div className={styles.qualityItem} key={item.label}>
                         <dt>
                           <span>{item.label}</span>
-                          <strong>{item.value}</strong>
                         </dt>
                         <dd>{item.description}</dd>
                       </div>

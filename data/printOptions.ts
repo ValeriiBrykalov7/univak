@@ -24,7 +24,7 @@ export type PrintOptionDetails = {
   capabilities: PrintCapability[];
   quality: PrintQualityItem[];
   materials: string[];
-  productionCycle: string;
+  productionCycle?: string;
   paletteTitle: string;
   paletteDescription: string;
   paletteNote: string;
