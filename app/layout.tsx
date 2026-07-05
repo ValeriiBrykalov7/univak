@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
+import BackToTop from "@/components/BackToTop/BackToTop";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider/SmoothScrollProvider";
@@ -50,6 +51,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <BackToTop />
           <ToastProvider />
         </SmoothScrollProvider>
       </body>

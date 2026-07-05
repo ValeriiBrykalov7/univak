@@ -21,13 +21,13 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     <article className={styles.product}>
       <section className={styles.hero}>
         <div className={`container ${styles.heroContainer}`}>
-          <nav
-            className={styles.breadcrumbs}
-            aria-label="Навігаційний ланцюжок"
-          >
-            <Link href="/#products">Наші пропозиції</Link>
-            <span aria-hidden="true">/</span>
-            <span aria-current="page">{product.shortTitle}</span>
+          <nav aria-label="Навігаційний ланцюжок">
+            <ol className={styles.breadcrumbs}>
+              <li>
+                <Link href="/#products">Наші пропозиції</Link>
+              </li>
+              <li aria-current="page">{product.shortTitle}</li>
+            </ol>
           </nav>
 
           <div className={styles.heroGrid}>
@@ -45,31 +45,98 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
               <Link
                 className={`button orange ${styles.heroCta}`}
-                href="/#contacts"
+                href={`/products/${product.slug}#contacts`}
               >
                 Отримати консультацію
               </Link>
             </div>
 
-            <div className={styles.imageWrap}>
-              <Image
-                className={styles.image}
-                src={product.image}
-                alt={product.shortTitle}
-                fill
-                priority
-                sizes="(min-width: 1440px) 540px, (min-width: 768px) 656px, calc(100vw - 32px)"
-              />
+            <div className={styles.mediaColumn}>
+              <figure className={styles.imageWrap}>
+                <Image
+                  className={styles.image}
+                  src={product.image}
+                  alt=""
+                  fill
+                  priority
+                  sizes="(min-width: 1440px) 540px, (min-width: 768px) 656px, calc(100vw - 32px)"
+                />
+                <figcaption className={styles.visuallyHidden}>
+                  {product.shortTitle}
+                </figcaption>
+              </figure>
+
+              <nav
+                className={styles.productNavigation}
+                aria-labelledby="product-navigation-title"
+              >
+                <p
+                  className={styles.productNavigationTitle}
+                  id="product-navigation-title"
+                >
+                  На цій сторінці
+                </p>
+                <ul className={styles.productNav}>
+                  <li>
+                    <Link href={`/products/${product.slug}#benefits`}>
+                      <span>Основні переваги</span>
+                      <Icon
+                        name="icon-card-arrow"
+                        size={18}
+                        className={styles.productNavArrow}
+                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={`/products/${product.slug}#specs`}>
+                      <span>Технічні характеристики</span>
+                      <Icon
+                        name="icon-card-arrow"
+                        size={18}
+                        className={styles.productNavArrow}
+                      />
+                    </Link>
+                  </li>
+                  {product.seamTypes ? (
+                    <li>
+                      <Link href={`/products/${product.slug}#seams`}>
+                        <span>Види швів</span>
+                        <Icon
+                          name="icon-card-arrow"
+                          size={18}
+                          className={styles.productNavArrow}
+                        />
+                      </Link>
+                    </li>
+                  ) : null}
+                  {printDetails ? (
+                    <li>
+                      <Link href={`/products/${product.slug}#print`}>
+                        <span>Варіанти друку</span>
+                        <Icon
+                          name="icon-card-arrow"
+                          size={18}
+                          className={styles.productNavArrow}
+                        />
+                      </Link>
+                    </li>
+                  ) : null}
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={styles.benefitsSection}>
+      <section
+        id="benefits"
+        className={styles.benefitsSection}
+        aria-labelledby="benefits-title"
+      >
         <div className={`container ${styles.sectionContainer}`}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionEyebrow}>Практична користь</p>
-            <h2>Основні переваги</h2>
+            <h2 id="benefits-title">Основні переваги</h2>
           </div>
 
           <ul className={styles.benefitsList}>
@@ -87,11 +154,15 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </div>
       </section>
 
-      <section className={styles.specsSection}>
+      <section
+        id="specs"
+        className={styles.specsSection}
+        aria-labelledby="specs-title"
+      >
         <div className={`container ${styles.sectionContainer}`}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionEyebrow}>Параметри продукту</p>
-            <h2>Технічні характеристики</h2>
+            <h2 id="specs-title">Технічні характеристики</h2>
           </div>
 
           <dl className={styles.specsList}>
@@ -112,11 +183,15 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       </section>
 
       {product.seamTypes ? (
-        <section className={styles.seamsSection}>
+        <section
+          id="seams"
+          className={styles.seamsSection}
+          aria-labelledby="seams-title"
+        >
           <div className={`container ${styles.sectionContainer}`}>
             <div className={styles.sectionHeader}>
               <p className={styles.sectionEyebrow}>Варіанти виготовлення</p>
-              <h2>Доступні види швів</h2>
+              <h2 id="seams-title">Доступні види швів</h2>
               <p className={styles.sectionDescription}>
                 Конструкцію пакета можна підібрати відповідно до форми продукту
                 та типу пакувального обладнання.
@@ -145,11 +220,16 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
       {printDetails ? <PrintInfoExpandable details={printDetails} /> : null}
 
-      <section className={styles.ctaSection}>
+      <section
+        className={styles.ctaSection}
+        aria-labelledby="product-cta-title"
+      >
         <div className={`container ${styles.ctaContainer}`}>
           <div>
             <p className={styles.ctaEyebrow}>Потрібна допомога з вибором?</p>
-            <h2>Підберемо матеріал під ваше виробництво</h2>
+            <h2 id="product-cta-title">
+              Підберемо матеріал під ваше виробництво
+            </h2>
             <p>
               Допоможемо визначити формат, товщину, бар’єрні властивості та
               варіант друку.
@@ -157,7 +237,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           </div>
           <Link
             className={`button orange ${styles.ctaButton}`}
-            href="/#contacts"
+            href={`/products/${product.slug}#contacts`}
           >
             Зв’язатися з нами
           </Link>

@@ -45,13 +45,14 @@
 .previewPalette {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 8px;
   margin-top: 22px;
 }
 
 .previewColor {
-  width: 28px;
-  height: 28px;
+  width: 27px;
+  height: 27px;
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(31, 41, 51, 0.14);
@@ -358,6 +359,11 @@
 
   .conclusion {
     padding: 26px 30px;
+  }
+
+  .previewColor {
+    width: 26px;
+    height: 26px;
   }
 }
 

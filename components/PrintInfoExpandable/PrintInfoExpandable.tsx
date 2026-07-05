@@ -22,6 +22,7 @@ export default function PrintInfoExpandable({
     <section
       className={styles.section}
       aria-labelledby={`${details.key}-title`}
+      id="print"
     >
       <div className={`container ${styles.container}`}>
         <div className={styles.summaryRow}>
@@ -33,7 +34,7 @@ export default function PrintInfoExpandable({
             <p className={styles.summary}>{details.summary}</p>
 
             <ul className={styles.previewPalette} aria-label="Кольори палітри">
-              {details.colors.slice(0, 10).map((color) => (
+              {details.colors.map((color) => (
                 <li
                   className={styles.previewColor}
                   key={color.code}
