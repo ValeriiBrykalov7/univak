@@ -18,7 +18,7 @@
 
 .hero::before {
   z-index: -2;
-  background-image: url("/images/packaging-hero.jpg");
+  background-image: url("/images/hero.jpg");
   background-repeat: no-repeat;
   background-position: 58% center;
   background-size: cover;
