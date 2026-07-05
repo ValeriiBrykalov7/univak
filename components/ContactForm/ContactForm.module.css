@@ -80,6 +80,14 @@
   color: rgba(102, 112, 133, 0.68);
 }
 
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-text-main);
+  caret-color: var(--color-text-main);
+  box-shadow: 0 0 0 1000px #fbfdfb inset;
+}
+
 .input:hover {
   background-color: var(--color-white);
   border-color: rgba(47, 107, 63, 0.36);
@@ -91,6 +99,12 @@
   border-color: var(--color-green);
   box-shadow: 0 0 0 4px rgba(47, 107, 63, 0.12);
   transform: translateY(-1px);
+}
+
+.input:-webkit-autofill:focus {
+  box-shadow:
+    0 0 0 1000px var(--color-white) inset,
+    0 0 0 4px rgba(47, 107, 63, 0.12);
 }
 
 .input[aria-invalid="true"] {

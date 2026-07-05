@@ -7,6 +7,8 @@ html.mobile-menu-open body {
 }
 
 :root {
+  color-scheme: only light;
+
   --color-green: #2f6b3f;
   --color-green-hover: #255a35;
 
@@ -23,10 +25,21 @@ html.mobile-menu-open body {
   --color-white: #ffffff;
 }
 
+html {
+  background-color: #f8faf7;
+}
+
 body {
   font-family: var(--font-body), sans-serif;
   color: var(--color-text-main);
   background-color: #f8faf7;
+}
+
+input,
+textarea,
+select,
+button {
+  color-scheme: light;
 }
 
 section[id],

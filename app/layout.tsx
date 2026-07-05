@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope, Inter } from "next/font/google";
 import BackToTop from "@/components/BackToTop/BackToTop";
 import Footer from "@/components/Footer/Footer";
@@ -37,6 +37,11 @@ export const metadata: Metadata = {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "#f8faf7",
 };
 
 export default function RootLayout({
