@@ -132,6 +132,12 @@
 .expandableInner {
   min-height: 0;
   overflow: hidden;
+  transform: translateY(-6px);
+  transition: transform 280ms ease;
+}
+
+.expandableOpen .expandableInner {
+  transform: translateY(0);
 }
 
 .details {
@@ -397,5 +403,10 @@
   .expandable,
   .colorTable tbody tr {
     transition: none;
+  }
+  .expandable,
+  .expandableInner {
+    transition: none;
+    transform: none;
   }
 }

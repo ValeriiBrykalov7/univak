@@ -64,7 +64,7 @@ export default function Footer() {
               <div className={styles.contactBlock}>
                 <h2 className={styles.blockTitle}>Бухгалтер</h2>
                 <p>Кустова Леся</p>
-                <a className={styles.contactLink} href="tel:+380674021731">
+                <a className={styles.contactLink} href="tel:+380992459198">
                   <Icon name="icon-phone" size={18} />
                   <span>+38 099 245 91 98</span>
                 </a>
