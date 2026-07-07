@@ -37,7 +37,9 @@ export default function Footer() {
                   <br />
                   08343, Київська обл.,
                   <br />
-                  Бориспільський р-н, с. Мартусівка,
+                  Бориспільський р-н,
+                  <br />
+                  с. Мартусівка,
                   <br />
                   вул. Промислова, 72
                 </p>
@@ -64,7 +66,7 @@ export default function Footer() {
                 <p>Кустова Леся</p>
                 <a className={styles.contactLink} href="tel:+380674021731">
                   <Icon name="icon-phone" size={18} />
-                  <span>+38 067 402 17 31</span>
+                  <span>+38 099 245 91 98</span>
                 </a>
                 <a
                   className={styles.contactLink}

@@ -23,6 +23,7 @@
 .info {
   display: grid;
   gap: 28px;
+  order: 2;
 }
 
 .logoLink {
@@ -226,7 +227,9 @@
     max-width: 704px;
     padding: 0 24px;
   }
-
+  .info {
+    order: 0;
+  }
   .address {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
