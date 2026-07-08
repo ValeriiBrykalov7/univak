@@ -131,6 +131,36 @@
   margin-top: 22px;
 }
 
+.privacyNotice {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.privacyNotice a {
+  font-weight: 800;
+  color: var(--color-green);
+  text-decoration: underline;
+  text-decoration-color: rgba(47, 107, 63, 0.28);
+  text-underline-offset: 3px;
+  transition:
+    color 180ms ease,
+    text-decoration-color 180ms ease;
+}
+
+.privacyNotice a:hover,
+.privacyNotice a:focus-visible {
+  color: var(--color-orange-hover);
+  text-decoration-color: rgba(244, 124, 32, 0.58);
+}
+
+.privacyNotice a:focus-visible {
+  outline: 3px solid rgba(47, 107, 63, 0.12);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .submitContent {
   position: relative;
   z-index: 1;

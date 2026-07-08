@@ -1,6 +1,7 @@
 "use client";
 
 import { yupResolver } from "@hookform/resolvers/yup";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -174,6 +175,12 @@ export default function ContactForm() {
           <span>{isSubmitting ? "Надсилаємо" : "Надіслати"}</span>
         </span>
       </Button>
+
+      <p className={styles.privacyNotice}>
+        Надсилаючи форму, ви погоджуєтеся з обробкою персональних даних
+        відповідно до{" "}
+        <Link href="/privacy-policy">Політики конфіденційності</Link>.
+      </p>
     </form>
   );
 }
