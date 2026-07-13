@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:email-assets": "node scripts/generate-email-assets.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -26,6 +27,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "sharp": "^0.35.3",
     "typescript": "^5"
   }
 }

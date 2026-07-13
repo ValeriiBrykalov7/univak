@@ -60,22 +60,6 @@ export default function Footer() {
                   <span>univac.ua@gmail.com</span>
                 </a>
               </div>
-
-              <div className={styles.contactBlock}>
-                <h2 className={styles.blockTitle}>Бухгалтер</h2>
-                <p>Кустова Леся</p>
-                <a className={styles.contactLink} href="tel:+380992459198">
-                  <Icon name="icon-phone" size={18} />
-                  <span>+38 099 245 91 98</span>
-                </a>
-                <a
-                  className={styles.contactLink}
-                  href="mailto:lesya5899@ukr.net"
-                >
-                  <Icon name="icon-mail" size={18} />
-                  <span>lesya5899@ukr.net</span>
-                </a>
-              </div>
             </address>
 
             <div className={styles.socialGroup}>
