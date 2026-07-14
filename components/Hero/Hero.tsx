@@ -11,6 +11,14 @@ const badges = [
 export default function Hero() {
   return (
     <section className={styles.hero} id="hero">
+      <span
+        className={`${styles.motionLayer} ${styles.motionLayerGloss}`}
+        aria-hidden="true"
+      />
+      <span
+        className={`${styles.motionLayer} ${styles.motionLayerDepth}`}
+        aria-hidden="true"
+      />
       <div className={`container ${styles.content}`}>
         <div className={styles.textBlock}>
           <p className={styles.eyebrow}>Пакувальні матеріали для B2B</p>
