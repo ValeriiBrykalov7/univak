@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const SITE_NAME = "ЮНІВАК УКРАЇНА";
+export const DEFAULT_SITE_URL = "https://univak.com.ua";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  (process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL).replace(/\/$/, "");
 export const DEFAULT_OG_IMAGE = "/images/og-univak.jpg";
 export const DEFAULT_OG_IMAGE_SIZE = {
   width: 1200,
