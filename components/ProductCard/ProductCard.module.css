@@ -135,7 +135,7 @@
   color: var(--color-text-main);
   transition: color 220ms ease-in-out;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
 
 .description {
