@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Icon from "@/components/Icon/Icon";
@@ -10,6 +11,7 @@ import { socialLinks } from "@/data/socialLinks";
 import styles from "./Header.module.css";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
@@ -22,11 +24,28 @@ export default function Header() {
   }, [isMenuOpen]);
 
   useEffect(() => {
+    const frameId = requestAnimationFrame(() => setIsMenuOpen(false));
+
+    return () => cancelAnimationFrame(frameId);
+  }, [pathname]);
+
+  useEffect(() => {
     const hero = document.getElementById("hero");
+    let frameId: number | undefined;
 
     if (!hero) {
-      return;
+      frameId = requestAnimationFrame(() => setIsPastHero(false));
+      return () => {
+        if (frameId) {
+          cancelAnimationFrame(frameId);
+        }
+      };
     }
+
+    frameId = requestAnimationFrame(() => {
+      const { bottom } = hero.getBoundingClientRect();
+      setIsPastHero(bottom <= 0);
+    });
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -39,14 +58,26 @@ export default function Header() {
 
     observer.observe(hero);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+
+      observer.disconnect();
+    };
+  }, [pathname]);
 
   useEffect(() => {
     const footer = document.getElementById("contacts");
+    let frameId: number | undefined;
 
     if (!footer) {
-      return;
+      frameId = requestAnimationFrame(() => setIsFooterVisible(false));
+      return () => {
+        if (frameId) {
+          cancelAnimationFrame(frameId);
+        }
+      };
     }
 
     const observer = new IntersectionObserver(
@@ -56,8 +87,14 @@ export default function Header() {
 
     observer.observe(footer);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+
+      observer.disconnect();
+    };
+  }, [pathname]);
 
   const closeMenu = () => setIsMenuOpen(false);
 
