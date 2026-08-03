@@ -306,9 +306,9 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .item {
-    width: calc((100% - 66px) / 4);
+    width: calc((100% - 44px) / 3);
   }
 
   .content {
@@ -321,5 +321,11 @@
 
   .text {
     min-height: 170px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .item {
+    width: calc((100% - 66px) / 4);
   }
 }

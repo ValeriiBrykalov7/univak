@@ -30,7 +30,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             src={product.image}
             alt={product.shortTitle}
             fill
-            sizes="(min-width: 1440px) 285px, (min-width: 768px) 316px, 100vw"
+            sizes="(min-width: 1440px) 285px, (min-width: 1024px) 299px, (min-width: 768px) 316px, 100vw"
           />
         </span>
 

@@ -3,11 +3,6 @@
   background-color: #f8faf7;
 }
 
-.container {
-  padding: 0 16px;
-  margin: 0 auto;
-}
-
 .intro {
   display: grid;
   gap: 32px;
@@ -345,11 +340,6 @@
     padding: 92px 0;
   }
 
-  .container {
-    max-width: 704px;
-    padding: 0 24px;
-  }
-
   .title {
     font-size: 48px;
   }
@@ -389,14 +379,9 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .section {
     padding: 112px 0;
-  }
-
-  .container {
-    max-width: 1180px;
-    padding: 0;
   }
 
   .intro {

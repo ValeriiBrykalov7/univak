@@ -59,7 +59,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                   alt=""
                   fill
                   priority
-                  sizes="(min-width: 1440px) 540px, (min-width: 768px) 656px, calc(100vw - 32px)"
+                  sizes="(min-width: 1024px) 540px, (min-width: 768px) 656px, calc(100vw - 32px)"
                 />
                 <figcaption className={styles.visuallyHidden}>
                   {product.shortTitle}

@@ -13,14 +13,6 @@
   background-size: 32px 32px;
 }
 
-.heroContainer,
-.sectionContainer,
-.ctaContainer {
-  padding-right: 16px;
-  padding-left: 16px;
-  margin: 0 auto;
-}
-
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -450,13 +442,6 @@
     padding: 38px 0 88px;
   }
 
-  .heroContainer,
-  .sectionContainer,
-  .ctaContainer {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-
   .heroGrid {
     gap: 50px;
     margin-top: 46px;
@@ -522,16 +507,9 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .hero {
     padding: 44px 0 104px;
-  }
-
-  .heroContainer,
-  .sectionContainer,
-  .ctaContainer {
-    padding-right: 0;
-    padding-left: 0;
   }
 
   .heroGrid {

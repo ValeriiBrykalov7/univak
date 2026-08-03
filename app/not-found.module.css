@@ -47,8 +47,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 64px 16px 72px;
-  margin: 0 auto;
+  padding-top: 64px;
+  padding-bottom: 72px;
 }
 
 .content {
@@ -133,7 +133,8 @@
   }
 
   .container {
-    padding: 88px 24px 96px;
+    padding-top: 88px;
+    padding-bottom: 96px;
   }
 
   .code {
@@ -164,7 +165,7 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .section {
     min-height: calc(100svh - 74px);
   }
@@ -186,7 +187,8 @@
   }
 
   .container {
-    padding: 94px 0 104px;
+    padding-top: 94px;
+    padding-bottom: 104px;
   }
 
   .code {

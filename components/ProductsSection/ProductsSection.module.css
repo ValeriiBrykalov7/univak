@@ -29,8 +29,6 @@
 .container {
   position: relative;
   z-index: 1;
-  padding: 0 16px;
-  margin: 0 auto;
 }
 
 .header {
@@ -75,11 +73,6 @@
     padding: 92px 0;
   }
 
-  .container {
-    max-width: 704px;
-    padding: 0 24px;
-  }
-
   .title {
     font-size: 50px;
   }
@@ -90,14 +83,9 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .section {
     padding: 112px 0;
-  }
-
-  .container {
-    max-width: 1180px;
-    padding: 0;
   }
 
   .title {

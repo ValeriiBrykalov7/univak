@@ -1,6 +1,7 @@
 .container {
   width: 100%;
   max-width: 400px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 
@@ -8,13 +9,21 @@
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 704px;
+    padding: 0 24px;
   }
 }
 
 /* Styles for desktop */
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 32px;
+  }
+}
+
+/* Styles for large desktop */
 @media only screen and (min-width: 1440px) {
   .container {
     max-width: 1180px;
-    padding: 0;
   }
 }

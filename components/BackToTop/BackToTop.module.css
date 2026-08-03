@@ -104,7 +104,7 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .backToTop {
     right: 32px;
     bottom: 32px;
